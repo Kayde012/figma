@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | JasperDev</title>
+  <link rel="icon" type="image/png" href="ryo.png" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            fadeIn: 'fadeIn 1s ease-out',
+            slideUp: 'slideUp 0.8s ease-out',
+            float: 'float 3s ease-in-out infinite',
+            'spin-border': 'spin-border 2s linear infinite',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            slideUp: {
+              '0%': { transform: 'translateY(30px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-15px)' },
+            },
+            'spin-border': {
+              '0%': { transform: 'rotate(0deg)' },
+              '100%': { transform: 'rotate(360deg)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body class="bg-gray-900 text-white min-h-screen relative overflow-hidden">
+
+  <!-- Background Image -->
+  <div class="absolute inset-0 z-0">
+    <img src="bg.jpg" alt="Background" class="w-full h-full object-cover opacity-20" />
+  </div>
+
+  <!-- Page Content -->
+  <div class="relative z-10 flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header class="flex justify-around items-center bg-gray-800 p-6">
+      <a href="landing.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity duration-200">
+        <img src="ryo.png" alt="Logo" class="w-10 h-10 object-contain" />
+        <span class="text-3xl font-medium">JasperDev</span>
+      </a>
+
+      <ul class="hidden md:flex gap-10 text-xl mr-10">
+        <li class="relative group">
+          <a href="about.html" class="cursor-pointer text-pink-300 font-semibold relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-pink-300">
+            About
+          </a>
+        </li>
+        <li class="relative group">
+          <a href="contact.html" class="cursor-pointer relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-pink-300 after:transition-all after:duration-300 group-hover:after:w-full">
+            Contact
+          </a>
+        </li>
+        <li class="relative group">
+          <a href="certificate.html" class="cursor-pointer relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-pink-300 after:transition-all after:duration-300 group-hover:after:w-full">
+            Certificate
+          </a>
+        </li>
+      </ul>
+
+      <button id="menu-btn" class="md:hidden text-white text-3xl focus:outline-none">
+        &#9776;
+      </button>
+    </header>
+
+    <!-- Overlay -->
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-2/3 max-w-xs bg-gray-800 text-white p-6 transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+      <button id="close-btn" class="text-2xl absolute top-4 right-4">&times;</button>
+      <ul class="mt-12 space-y-6 text-xl">
+        <li><a href="about.html" class="text-pink-300 font-semibold">About</a></li>
+        <li><a href="contact.html" class="hover:underline">Contact</a></li>
+        <li><a href="certificate.html" class="hover:underline">Certificate</a></li>
+      </ul>
+    </div>
+
+    <main class="flex-1 flex items-center justify-center px-8">
+      <div class="flex flex-col md:flex-row gap-8 items-center max-w-6xl w-full">
+
+        <!-- Left Section -->
+        <div class="flex-1 animate-slideUp">
+          <h1 class="text-4xl md:text-7xl font-bold mb-4 relative inline-block text-white mt-4">
+            About Me
+            <span class="absolute left-0 bottom-0 w-full h-1 bg-pink-300"></span>
+            </h1>
+
+          <p class="text-xl text-gray-300">
+           I'm currenty a college student, And I'm a junior
+            web developer. I build websites that are both
+            functional and enjoyable to use. I love figuring
+            out how things work and turning ideas into
+            reality online: I'm always learning new things
+            and enjoy Sp cool
+            projects. Basically, I make internet a little
+            more useful and fun
+          </p>
+          <p class="flex gap-6 text-3xl md:text-5xl text-gray-300 mt-10">
+            <i class="fa-brands fa-github hover:text-[#F3A8BC] transition-colors duration-300"></i>
+            <i class="fa-brands fa-linkedin hover:text-[#F3A8BC] transition-colors duration-300"></i>
+          </p>
+        </div>
+
+        <!-- Right Section -->
+        <div class="flex-1 flex justify-center animate-slideUp delay-300">
+          <div class="relative w-84 h-84 rounded-lg overflow-hidden animate-float">
+            <!-- Animated border overlay -->
+            <div class="absolute inset-0 rounded-lg border-2 border-transparent z-10 pointer-events-none before:content-[''] before:absolute before:inset-0 before:rounded-lg before:border-2 before:border-pink-300 before:animate-spin-border"></div>
+
+            <!-- Image inside -->
+            <div class="w-full h-full bg-gray-700 rounded-lg overflow-hidden z-0">
+                <img src="ryo.png" alt="Your Alt Text" class="w-full h-full object-cover" />
+            </div>
+            </div>
+
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- JS -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const closeBtn = document.getElementById('close-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const overlay = document.getElementById('overlay');
+
+    function openMenu() {
+      mobileMenu.classList.remove('translate-x-full');
+      overlay.classList.remove('hidden');
+    }
+
+    function closeMenu() {
+      mobileMenu.classList.add('translate-x-full');
+      overlay.classList.add('hidden');
+    }
+
+    menuBtn.addEventListener('click', openMenu);
+    closeBtn.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+  </script>
+</body>
+</html>
